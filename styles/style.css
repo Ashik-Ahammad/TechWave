@@ -14,7 +14,7 @@
   padding: 20px;
   color: white;
   background-color: rgb(25, 11, 46);
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgba(65, 37, 103, 1);
 }
 
 .navbar h2 {
@@ -47,43 +47,107 @@
 
 #nav-btn:hover {
   opacity: 0.9;
+  box-shadow: 0 0 20px 2px rgba(55, 115, 204, 0.6);
   transition: all 0.3s ease-in-out;
 }
 
-.banner {
+.hero {
   position: relative;
-  width: 100%;
   min-height: 100vh;
-  background: url("../assets/hero-bg.png") no-repeat center center / cover;
+  background: url("../assets/hero-bg.png") no-repeat center center;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding-top: 80px;
 }
 
-.mic-bg {
-  position: absolute;
+.hero-center {
+  position: relative;
+  top: -70px;
   width: 420px;
-  height: auto;
-  top: 125px;
-  right: 739px;
-  z-index: 1;
-}
-
-.mic-icon {
-  position: absolute;
-  width: 150px;
-  height: auto;
-  top: 210px;
-  right: 868px;
-  z-index: 2;
+  height: 400px;
+  z-index: 5;
+  margin-bottom: 40px;
 }
 
 .banner-content {
-  margin-top: 400px;
   position: relative;
-  z-index: 3;
+  z-index: 10;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-circle img {
+  width: 100%;
+  display: block;
+}
+
+/* ---------- Glowing Animation for Hero Circle ---------- */
+.hero-circle img {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0% {
+    filter: drop-shadow(0 0 10px rgba(247, 233, 63, 0.4))
+      drop-shadow(0 0 20px rgba(251, 9, 180, 0.3))
+      drop-shadow(0 0 30px rgba(145, 0, 248, 0.2));
+    transform: scale(1);
+  }
+
+  50% {
+    filter: drop-shadow(0 0 20px rgba(247, 233, 63, 0.7))
+      drop-shadow(0 0 40px rgba(251, 9, 180, 0.6))
+      drop-shadow(0 0 60px rgba(145, 0, 248, 0.5));
+    transform: scale(1.03);
+  }
+
+  100% {
+    filter: drop-shadow(0 0 10px rgba(247, 233, 63, 0.4))
+      drop-shadow(0 0 20px rgba(251, 9, 180, 0.3))
+      drop-shadow(0 0 30px rgba(145, 0, 248, 0.2));
+    transform: scale(1);
+  }
+}
+
+.hero-mic {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-mic img {
+  width: 120px;
+}
+
+.badge {
+  position: absolute;
+  top: 20px;
+  right: 60px;
+  background: #00ff88;
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  z-index: 10;
+  box-shadow: 0 0 20px 2px rgba(0, 255, 136, 0.6);
+}
+
+.banner-details {
+  background: rgb(25, 11, 46);
+}
+
+.banner-content {
+  margin: 0 auto;
   text-align: center;
   color: white;
   max-width: 800px;
@@ -115,6 +179,12 @@
   cursor: pointer;
 }
 
+.spotify-btn:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 20px 2px rgba(75, 111, 209, 0.6);
+  transition: all 0.2s ease-in-out;
+}
+
 .subscribe-btn {
   background-color: transparent;
   border: 2px solid #00ff88;
@@ -124,7 +194,12 @@
   cursor: pointer;
 }
 
-/* About Podcast Section */
+.subscribe-btn:hover {
+  box-shadow: 0 0 20px 2px rgba(0, 255, 136, 0.6);
+  transition: all 0.2s ease-in-out;
+}
+
+/*+++++++++++++++++++++++++++ About Podcast Section +++++++++++++++++++++++++++*/
 
 .about-podcast {
   background-color: rgb(25, 11, 46);
@@ -158,7 +233,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 160px;
+  margin-bottom: 80px;
+  border-bottom: 1px solid rgba(65, 37, 103, 1);
+  padding-bottom: 80px;
 }
 
 .about-statistics-items {
@@ -274,7 +351,7 @@
   max-width: 710px;
 }
 
-/* Featured Episodes Section */
+/*+++++++++++++++++++++++++++ Featured Episodes Section +++++++++++++++++++++++++++*/
 .featured-episodes {
   background-color: rgba(26, 11, 46, 1);
   padding-top: 120px;
@@ -309,7 +386,7 @@
   margin-bottom: 12px;
 }
 
-/* Host */
+/*+++++++++++++++++++++++++++ Host +++++++++++++++++++++++++++*/
 
 .meet-the-host {
   background: rgba(26, 11, 46, 1);
@@ -358,37 +435,35 @@
 
 /* +++++++++++++++++++++++++++FOOTER+++++++++++++++++++++++++++ */
 
-
-
 .footer-section {
-    background: url("../assets/footer-bg.png") no-repeat center center / cover;
-    min-height: 412px; 
-    width: 100%;
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 60px 20px;
+  background: url("../assets/footer-bg.png") no-repeat center center / cover;
+  min-height: 412px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
 }
 
-.footer-socials{
-    color: white;
-    display: flex;
-    margin-top: 34px;
+.footer-socials {
+  color: white;
+  display: flex;
+  margin-top: 34px;
 }
 
-.footer-socials a{
-    margin-right: 40px;
+.footer-socials a {
+  margin-right: 40px;
 }
 
 .footer-section p {
-    margin-top: 32px;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 14px;
+  margin-top: 32px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
 }
 
-/* ------------------------------- Responsive Styles ------------------------------- */
+/* -----------*******************-------------------- Responsive Styles ----------------*************************--------------- */
 
 /* Mobile Devices */
 
@@ -396,51 +471,42 @@
   .nav-links {
     display: none;
   }
+
   #nav-btn {
     display: none;
   }
 
-  /* ===================Banner================== */
-  .banner {
-    min-height: 70vh;
-    padding-top: 40px;
-  }
-
-  .hero-circle {
-    position: relative;
-    height: 220px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .mic-bg {
-    width: 200px;
-    height: 200px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    right: auto;
-  }
-
-  .mic-icon {
-    width: 70px;
+  .hero {
+    min-height: auto; 
+    padding-top: 40px; 
+    padding-bottom: 40px;
     height: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    right: auto;
+  }
+
+  .hero-center {
+    position: relative;
+    top: 90px; 
+    width: 200px; 
+    height: 200px;
+    margin: 0 auto 120px auto; }
+
+  .hero-mic img {
+    width: 80px;
+    height: 100px;
   }
 
   .badge {
-    top: 20px;
-    right: 25%;
-    font-size: 12px;
-  }
-
-  .banner-content {
-    margin-top: 10px;
+    position: absolute;
+    top: 15px;
+    right: -20px;
+    background: #00ff88;
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 999px;
+    z-index: 10;
+    box-shadow: 0 0 20px 2px rgba(0, 255, 136, 0.6);
   }
 
   .banner-content h1 {
@@ -475,12 +541,9 @@
     font-size: 32px;
     margin: 0 20px;
   }
-  .about-podcast-content p{
+  .about-podcast-content p {
     margin: 0 20px;
   }
-
-
-  /* ========================= */
 
   .why-techwave {
     padding: 60px 20px;
@@ -523,8 +586,6 @@
     max-width: 100%;
     margin-bottom: 0;
   }
-
-  /* ---------------- */
 
   .featured-episodes {
     padding: 60px 20px;
@@ -598,8 +659,8 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100% auto;
-    background-color: #1F1144; 
-    padding: 80px 24px; 
+    background-color: #1f1144;
+    padding: 80px 24px;
     min-height: auto;
     display: flex;
     flex-direction: column;
@@ -633,9 +694,8 @@
   }
 
   .copyright {
-    margin-top: 48px ;
+    margin-top: 48px;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.6);
   }
-
 }
