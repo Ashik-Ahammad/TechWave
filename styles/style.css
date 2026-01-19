@@ -88,7 +88,6 @@
   display: block;
 }
 
-/* ---------- Glowing Animation for Hero Circle ---------- */
 .hero-circle img {
   animation: glowPulse 3s ease-in-out infinite;
 }
