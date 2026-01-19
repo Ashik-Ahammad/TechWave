@@ -72,7 +72,9 @@
   height: 400px;
   z-index: 5;
   margin-bottom: 40px;
+  animation: float 4s ease-in-out infinite;
 }
+
 
 .banner-content {
   position: relative;
@@ -89,17 +91,13 @@
   display: block;
 }
 
-.hero-circle img {
-  animation: glow 3s ease-in-out infinite;
-}
 
-@keyframes glow {
+@keyframes float {
   0%, 100% {
-    filter: drop-shadow(0 0 18px rgba(145, 0, 248, 0.7));
+    transform: translateY(0);
   }
-
   50% {
-    filter: drop-shadow(0 0 32px rgba(145, 0, 248, 1));
+    transform: translateY(-12px);
   }
 }
 
