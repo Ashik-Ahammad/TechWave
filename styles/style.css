@@ -57,6 +57,7 @@
   background: url("../assets/hero-bg.png") no-repeat center center;
   background-size: cover;
   display: flex;
+  max-width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -89,31 +90,21 @@
 }
 
 .hero-circle img {
-  animation: glowPulse 3s ease-in-out infinite;
+  animation: glow 3s ease-in-out infinite;
 }
 
-@keyframes glowPulse {
-  0% {
-    filter: drop-shadow(0 0 10px rgba(247, 233, 63, 0.4))
-      drop-shadow(0 0 20px rgba(251, 9, 180, 0.3))
-      drop-shadow(0 0 30px rgba(145, 0, 248, 0.2));
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px rgba(145, 0, 248, 0.6));
     transform: scale(1);
   }
 
   50% {
-    filter: drop-shadow(0 0 20px rgba(247, 233, 63, 0.7))
-      drop-shadow(0 0 40px rgba(251, 9, 180, 0.6))
-      drop-shadow(0 0 60px rgba(145, 0, 248, 0.5));
+    filter: drop-shadow(0 0 40px rgb(228, 134, 96));
     transform: scale(1.03);
   }
-
-  100% {
-    filter: drop-shadow(0 0 10px rgba(247, 233, 63, 0.4))
-      drop-shadow(0 0 20px rgba(251, 9, 180, 0.3))
-      drop-shadow(0 0 30px rgba(145, 0, 248, 0.2));
-    transform: scale(1);
-  }
 }
+
 
 .hero-mic {
   position: absolute;
@@ -233,8 +224,8 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 80px;
-  border-bottom: 1px solid rgba(65, 37, 103, 1);
   padding-bottom: 80px;
+  border-bottom: 1px solid rgba(65, 37, 103, 1);
 }
 
 .about-statistics-items {
