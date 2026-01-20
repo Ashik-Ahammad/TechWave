@@ -351,6 +351,8 @@ p {
   display: flex;
   gap: 30px;
   justify-content: center;
+  transition: all 0.9s ease-in-out;
+  cursor: pointer;
 }
 
 .featured-card {
@@ -358,6 +360,11 @@ p {
   background: rgba(37, 13, 68, 1);
   border-radius: 16px;
   padding-bottom: 20px;
+}
+
+.featured-card:hover {
+  transform: translateY(-2px);
+ box-shadow: 5px 10px 30px -10px rgba(13, 166, 236, 0.4);
 }
 
 .featured-card iframe {
@@ -481,12 +488,8 @@ p {
     padding-top: 40px;
     padding-bottom: 40px;
     height: auto;
-     background: url("../assets/mobilebg-banner.png") no-repeat center center;
-  
+    background: url("../assets/mobilebg-banner.png") no-repeat center center;
   }
-
-  
-
 
   .hero-center {
     position: relative;
@@ -515,7 +518,7 @@ p {
     box-shadow: 0 0 20px 2px rgba(0, 255, 136, 0.6);
   }
 
-  .banner-content{
+  .banner-content {
     position: relative;
     top: -100px;
   }
@@ -713,5 +716,149 @@ p {
     margin-top: 48px;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+/* ------------------------------------------------Medium Devices Responsive---------------------------------------- */
+
+@media (min-width: 576px) and (max-width: 992px) {
+  .navbar {
+    padding: 20px 40px;
+  }
+
+  .nav-links ul li {
+    margin: 0 10px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 80px 20px 60px;
+  }
+
+  .hero-center {
+    width: 320px;
+    height: 320px;
+    top: -40px;
+    margin-bottom: 20px;
+  }
+
+  .hero-mic img {
+    width: 100px;
+  }
+
+  .badge {
+    top: 20px;
+    right: 20px;
+    font-size: 16px;
+  }
+
+  .banner-content h1 {
+    font-size: 48px;
+  }
+
+  .banner-content p {
+    font-size: 15px;
+  }
+
+  .btn-group {
+    gap: 16px;
+  }
+
+  .about-podcast-content h1 {
+    font-size: 40px;
+  }
+
+  .about-podcast-content p {
+    padding: 0 40px;
+  }
+
+  .about-statistics-items {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 60px;
+    gap: 40px;
+  }
+
+  .why-techwave {
+    padding: 80px 40px;
+  }
+
+  .why-techwave h1 {
+    font-size: 40px;
+  }
+
+  .why-techwave-items {
+    margin: 40px 0;
+  }
+
+  .tech-first-items,
+  .tech-third-items {
+    grid-template-columns: 1fr;
+  }
+
+  .why-techwave-items-1,
+  .why-techwave-items-2,
+  .why-techwave-items-3,
+  .why-techwave-items-4,
+  .why-techwave-items-5 {
+    padding: 32px;
+  }
+
+  .why-techwave-items-1 p,
+  .why-techwave-items-2 p,
+  .why-techwave-items-3 p,
+  .why-techwave-items-4 p,
+  .why-techwave-items-5 p {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .featured-episodes {
+    padding: 80px 40px;
+  }
+
+  .featured-cards {
+    margin: 40px 0;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .featured-card {
+    max-width: 48%;
+  }
+
+  .featured-card iframe {
+    width: 100%;
+  }
+
+  .meet-the-host {
+    padding: 80px 40px;
+  }
+
+  .host-profile {
+    margin: 40px 0;
+    padding: 20px;
+  }
+
+  .host-img img {
+    width: 220px;
+  }
+
+  .host-bio p {
+    max-width: 100%;
+  }
+
+  .footer-section {
+    padding: 80px 40px;
+    background-size: cover;
+  }
+
+  .footer-socials {
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+  }
+
+  .footer-socials a {
+    margin-right: 0;
   }
 }
