@@ -481,14 +481,19 @@ p {
     padding-top: 40px;
     padding-bottom: 40px;
     height: auto;
+     background: url("../assets/mobilebg-banner.png") no-repeat center center;
+  
   }
+
+  
+
 
   .hero-center {
     position: relative;
-    top: 90px;
+    top: -40px;
     width: 200px;
     height: 200px;
-    margin: 0 auto 120px auto;
+    margin: 40px auto 120px auto;
   }
 
   .hero-mic img {
@@ -508,6 +513,11 @@ p {
     border-radius: 999px;
     z-index: 10;
     box-shadow: 0 0 20px 2px rgba(0, 255, 136, 0.6);
+  }
+
+  .banner-content{
+    position: relative;
+    top: -100px;
   }
 
   .banner-content h1 {
